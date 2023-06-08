@@ -6,11 +6,13 @@ import UserList, { loader as usersLoader } from './routes/UserList';
 import AlbumList, { loader as albumsLoader } from './routes/AlbumList';
 import Photos, { loader as photosLoader } from './routes/Photos';
 import Root from './routes/Root';
+import ErrorPage from './components/ErrorPage';
 
 const router = createBrowserRouter([
   {
     path: '/',
     element: <Root />,
+    errorElement: <ErrorPage />,
     children: [
       {
         index: true,

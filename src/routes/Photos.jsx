@@ -1,12 +1,16 @@
 import { useLoaderData } from 'react-router-dom';
 
 export async function loader({ params }) {
-  const response = await fetch(
-    `https://jsonplaceholder.typicode.com/photos?albumId=${params.albumId}`
-  );
-  const photos = await response.json();
+  try {
+    const response = await fetch(
+      `https://jsonplaceholder.typicode.com/photos?albumId=${params.albumId}`
+    );
+    const photos = await response.json();
 
-  return photos;
+    return photos;
+  } catch (error) {
+    console.log(error);
+  }
 }
 
 export default function AlbumList() {

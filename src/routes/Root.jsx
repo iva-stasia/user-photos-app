@@ -1,7 +1,9 @@
-import { Outlet, Link } from 'react-router-dom';
+import { Outlet, Link, useNavigation } from 'react-router-dom';
 import Breadcrumbs from '../components/Breadcrumbs';
 
 export default function Root() {
+  const {state} = useNavigation();
+
   return (
     <>
       <nav className="nav-list">
@@ -15,7 +17,10 @@ export default function Root() {
         </Link>
         <Breadcrumbs />
       </nav>
-      <Outlet />
+      <div className={state === 'loading' ? 'loading' : ''}>
+        {state === 'loading' && <div className="loader"></div>}
+        <Outlet />
+      </div>
     </>
   );
 }
