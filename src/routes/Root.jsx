@@ -1,5 +1,5 @@
 import { Outlet, Link } from 'react-router-dom';
-import Breadcrumbs from './components/Breadcrumbs';
+import Breadcrumbs from '../components/Breadcrumbs';
 
 export default function Root() {
   return (

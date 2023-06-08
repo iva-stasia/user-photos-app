@@ -5,7 +5,7 @@ import { RouterProvider, createBrowserRouter } from 'react-router-dom';
 import UserList, { loader as usersLoader } from './routes/UserList';
 import AlbumList, { loader as albumsLoader } from './routes/AlbumList';
 import Photos, { loader as photosLoader } from './routes/Photos';
-import Root from './Root';
+import Root from './routes/Root';
 
 const router = createBrowserRouter([
   {
